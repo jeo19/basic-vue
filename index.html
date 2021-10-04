@@ -18,16 +18,23 @@
 </div>
 <div id='app-7'>
     <ol>
-        <todo-item 
+        <todo-item1 
         v-for='item in groceryList'
         v-bind:todo='item'
-        v-bind:key='item.id'></todo-item>
+        v-bind:key='item.id'></todo-item1>
     </ol>
 </div>
 <div id='example'>
     <p>Original text:{{message}}</p>
     <p>Reverse text:{{reverseMessage}}</p>
 </div>
+<div id='app-8'>
+    <a v-bind:href='link'>Link</a>
+    <p></p>
+    <!--This is same above code-->
+    <a :href='link'>Link</a>
+</div>
+
 <script src='./index.js'></script>
 </body>
 </html>

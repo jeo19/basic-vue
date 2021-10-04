@@ -40,7 +40,7 @@ var app6 = new Vue({
     message: "Hello Vue",
   },
 });
-Vue.component("todo-item", {
+Vue.component("todo-item1", {
   props: ["todo"],
   template: "<li>{{todo.text}}</li>",
 });
@@ -63,5 +63,11 @@ var vm = new Vue({
     reverseMessage: function () {
       return this.message.split("").reverse().join("");
     },
+  },
+});
+var app8 = new Vue({
+  el: "#app-8",
+  data: {
+    link: "https://medium.com",
   },
 });
