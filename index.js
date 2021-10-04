@@ -71,14 +71,20 @@ var app8 = new Vue({
     link: "https://medium.com",
   },
 });
-var app9=new Vue({
-  el:'#app-9',
-  data:{
-    title:'Hello Vue.js'
+var app9 = new Vue({
+  el: "#app-9",
+  data: {
+    title: "Hello Vue.js",
   },
-  methods:{
-    sayHello:function(){
-      return this.title='Hello'
-    }
-  }
-})
+  methods: {
+    sayHello: function () {
+      return (this.title = "Hello");
+    },
+  },
+});
+var app10 = new Vue({
+  el: "#app-10",
+  data: {
+    aLinkToMedium: "<a href='https://medium.com'>Link</a>",
+  },
+});
