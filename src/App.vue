@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    Parent counter:{{ parentCounter }}
+    Parent counter:{{ getCounter }}
     <button @click="addCounter">+</button>
     <button @click="subCounter">-</button>
     <child></child>
@@ -15,7 +15,7 @@ export default {
   },
 
   computed: mapGetters({
-    parentCounter: "getCounter",
+    getCounter: "getCounter",
   }),
 
   methods: {

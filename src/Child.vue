@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr />
-    Child counter:{{ childCounter }}
+    Child counter:{{ getCounter }}
     <button>+</button>
     <button>-</button>
   </div>
@@ -10,7 +10,7 @@
 import { mapGetters } from "vuex";
 export default {
   computed: mapGetters({
-    childCounter: "getCounter",
+    getCounter: "getCounter",
   }),
 };
 </script>
