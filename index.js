@@ -88,3 +88,15 @@ var app10 = new Vue({
     aLinkToMedium: "<a href='https://medium.com'>Link</a>",
   },
 });
+new Vue({
+  el: "#app-11",
+  data: {
+    number: 0,
+  },
+  methods: {
+    rollDice: function () {
+      let N = Math.floor(Math.random() * 6 + 1);
+      this.number = N;
+    },
+  },
+});
