@@ -7,11 +7,10 @@
   </div>
 </template>
 <script>
+import { mapGetters } from "vuex";
 export default {
-  computed: {
-    childCounter() {
-      return this.$store.state.counter;
-    },
-  },
+  computed: mapGetters({
+    childCounter: "getCounter",
+  }),
 };
 </script>

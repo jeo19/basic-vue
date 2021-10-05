@@ -8,15 +8,15 @@
 </template>
 <script>
 import Child from "./Child.vue";
+import { mapGetters } from "vuex";
 export default {
   components: {
     child: Child,
   },
-  computed: {
-    parentCounter() {
-      return this.$store.state.counter;
-    },
-  },
+
+  computed: mapGetters({
+    parentCounter: "getCounter",
+  }),
 
   methods: {
     addCounter() {
