@@ -1,13 +1,13 @@
 <template>
   <div>
     <hr />
-    Child counter:{{ num }}
+    Child counter:{{ $store.state.counter }}
     <button>+</button>
     <button>-</button>
   </div>
 </template>
 <script>
 export default {
-  props: ["num"],
+  // props: ["num"],
 };
 </script>

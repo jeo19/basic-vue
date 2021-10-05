@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    Parent counter:{{ counter }}
+    Parent counter:{{ $store.state.counter }}
     <button @click="addCounter">+</button>
     <button @click="subCounter">-</button>
-    <child v-bind:num="counter"></child>
+    <!-- <child v-bind:num="counter"></child> -->
   </div>
 </template>
 <script>
@@ -12,15 +12,15 @@ export default {
   components: {
     child: Child,
   },
-  data() {
-    return { counter: 0 };
-  },
+  // data() {
+  //   return { counter: 0 };
+  // },
   methods: {
     addCounter() {
-      this.counter++;
+      this.$store.state.counter++;
     },
     subCounter() {
-      this.counter--;
+      this.$store.state.counter--;
     },
   },
 };
