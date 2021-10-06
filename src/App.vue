@@ -9,6 +9,7 @@
 <script>
 import Child from "./Child.vue";
 import { mapGetters } from "vuex";
+import { mapMutations } from "vuex";
 export default {
   components: {
     child: Child,
@@ -19,12 +20,8 @@ export default {
   }),
 
   methods: {
-    addCounter() {
-      this.$store.commit("addCounter");
-    },
-    subCounter() {
-      this.$store.commit("subCounter");
-    },
+    ...mapMutations(["addCounter"]),
+    ...mapMutations(["subCounter"]),
   },
 };
 </script>
