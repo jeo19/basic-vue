@@ -20,10 +20,10 @@ export default {
 
   methods: {
     addCounter() {
-      this.$store.state.counter++;
+      this.$store.commit("addCounter");
     },
     subCounter() {
-      this.$store.state.counter--;
+      this.$store.commit("subCounter");
     },
   },
 };

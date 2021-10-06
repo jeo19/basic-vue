@@ -10,7 +10,14 @@ export default new Vuex.Store({
       return state.counter;
     },
   },
-  mutations: {},
+  mutations: {
+    addCounter: function (state, payload) {
+      return state.counter++;
+    },
+    subCounter: function (state, payload) {
+      return state.counter--;
+    },
+  },
   actions: {},
   modules: {},
 });
