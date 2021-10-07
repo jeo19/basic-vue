@@ -20,7 +20,9 @@ export default new Vuex.Store({
   },
   actions: {
     addCounter({ commit }) {
-      commit("addCounter");
+      setTimeout(() => {
+        commit("addCounter");
+      }, 3000);
     },
   },
   modules: {},
