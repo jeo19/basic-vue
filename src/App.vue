@@ -20,7 +20,9 @@ export default {
   }),
 
   methods: {
-    ...mapMutations(["addCounter"]),
+    addCounter() {
+      this.$store.dispatch("addCounter");
+    },
     ...mapMutations(["subCounter"]),
   },
 };

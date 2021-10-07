@@ -18,6 +18,10 @@ export default new Vuex.Store({
       return state.counter--;
     },
   },
-  actions: {},
+  actions: {
+    addCounter({ commit }) {
+      commit("addCounter");
+    },
+  },
   modules: {},
 });
