@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     Parent counter:{{ getCounter }}
-    <button @click="addCounter">+</button>
+    <button @click="addCounter({ add: 10, sub: 15 })">+</button>
     <button @click="subCounter">-</button>
     <child></child>
   </div>
