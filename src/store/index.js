@@ -4,12 +4,11 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: { counter: 0, books: [] },
+  state: { counter: 0 },
   getters: {
     getCounter: function (state) {
       return state.counter;
     },
-    availableBooks() {},
   },
   mutations: {
     addCounter: function (state, payload) {
@@ -18,7 +17,6 @@ export default new Vuex.Store({
     subCounter: function (state, payload) {
       return state.counter--;
     },
-    setBook() {},
   },
   actions: {
     addCounter({ commit }) {
@@ -26,7 +24,6 @@ export default new Vuex.Store({
         commit("addCounter");
       }, 3000);
     },
-    fetchBooks() {},
   },
   modules: {},
 });

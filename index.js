@@ -100,3 +100,29 @@ new Vue({
     },
   },
 });
+Vue.component("button-counter", {
+  name: "button-counter",
+  template: '<button v-on:click="incrementCounter">{{counter}}</button>',
+  data() {
+    return {
+      counter: 0,
+    };
+  },
+  methods: {
+    incrementCounter() {
+      this.counter += 1;
+      this.$emit("increment");
+    },
+  },
+});
+new Vue({
+  el: "#counter-event-example",
+  data: {
+    total: 0,
+  },
+  methods: {
+    incrementTotal() {
+      this.total += 1;
+    },
+  },
+});
