@@ -1,14 +1,20 @@
 <template>
-  <div class="indigo lighten-3 pa-3">
-    <h1>User component</h1>
-    <p>name:{{ name }}</p>
-    <button @click="changeName">Change name</button>
-    <hr />
-    <v-layout row wrap>
-      <v-flex xs12 sm6><UserDetail></UserDetail></v-flex>
-      <v-flex xs12 sm6><UserEdit></UserEdit></v-flex>
-    </v-layout>
-  </div>
+  <v-app>
+    <v-content>
+      <div class="indigo lighten-3 pa-3">
+        <h1>User component</h1>
+        <p>name:{{ name }}</p>
+        <v-btn color="green" @click="changeName">Change name</v-btn>
+        <hr />
+        <v-layout row wrap>
+          <v-flex xs12 sm6
+            ><UserDetail :nameOfChild="name"></UserDetail
+          ></v-flex>
+          <v-flex xs12 sm6><UserEdit></UserEdit></v-flex>
+        </v-layout>
+      </div>
+    </v-content>
+  </v-app>
 </template>
 <script>
 import UserDetail from "./UserDetail.vue";
