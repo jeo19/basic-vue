@@ -6,7 +6,13 @@
 </template>
 <script>
 export default {
-  props: ["nameOfChild"],
+  props: {
+    nameOfChild: {
+      type: String,
+      required: true,
+    },
+  },
+
   data() {
     return {};
   },

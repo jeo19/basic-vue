@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <div class="indigo lighten-3 pa-3">
         <h1>User component</h1>
         <p>name:{{ name }}</p>
@@ -13,7 +13,7 @@
           <v-flex xs12 sm6><UserEdit></UserEdit></v-flex>
         </v-layout>
       </div>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 <script>
