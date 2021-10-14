@@ -27,16 +27,31 @@
           {{ ishasDog }}
         </v-list-item-content></v-list-item
       >
+      <v-list-item
+        ><v-list-item-content> Edit Date:</v-list-item-content>
+        <v-list-item-content class="justify-end">
+          {{ editedDate }}
+        </v-list-item-content></v-list-item
+      >
     </v-list>
   </div>
 </template>
 <script>
+import { eventBus } from "../main";
 export default {
+  data() {
+    return { editedDate: null };
+  },
   props: ["name", "address", "phone", "hasDog"],
   computed: {
     ishasDog() {
       return this.hasDog === true ? "Yes" : "No";
     },
+  },
+  created() {
+    eventBus.$on("userWasEdited", (date) => {
+      this.editedDate = date;
+    });
   },
 };
 </script>
