@@ -20,6 +20,7 @@
               :address="address"
               :phone="phone"
               :hasDog="hasDog"
+              v-on:child="parents"
             ></UserEdit
           ></v-flex>
         </v-layout>
@@ -44,8 +45,11 @@ export default {
     };
   },
   methods: {
-    changeName() {
-      this.name = "evan yu";
+    parents(user) {
+      this.name = user.name;
+      this.address = user.address;
+      this.phone = user.phone;
+      this.hasDog = user.hasDog;
     },
   },
 };

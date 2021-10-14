@@ -9,6 +9,7 @@
       <v-radio label="Has a dog" :value="true"></v-radio>
       <v-radio label="Has not a dog" :value="false"></v-radio>
     </v-radio-group>
+    <v-btn color="success" @click="changeUser">Edit</v-btn>
   </div>
 </template>
 <script>
@@ -22,6 +23,11 @@ export default {
     this.user.address = this.address;
     this.user.phone = this.phone;
     this.user.hasDog = this.hasDog;
+  },
+  methods: {
+    changeUser() {
+      this.$emit("child", this.user);
+    },
   },
 };
 </script>
