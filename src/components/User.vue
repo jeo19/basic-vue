@@ -4,13 +4,24 @@
       <div class="indigo lighten-3 pa-3">
         <h1>User component</h1>
         <p>name:{{ name }}</p>
-        <v-btn color="green" @click="changeName">Change name</v-btn>
         <hr />
         <v-layout row wrap>
           <v-flex xs12 sm6
-            ><UserDetail :nameOfChild="name"></UserDetail
+            ><UserDetail
+              :name="name"
+              :address="address"
+              :phone="phone"
+              :hasDog="hasDog"
+            ></UserDetail
           ></v-flex>
-          <v-flex xs12 sm6><UserEdit></UserEdit></v-flex>
+          <v-flex xs12 sm6
+            ><UserEdit
+              :name="name"
+              :address="address"
+              :phone="phone"
+              :hasDog="hasDog"
+            ></UserEdit
+          ></v-flex>
         </v-layout>
       </div>
     </v-main>
@@ -27,6 +38,9 @@ export default {
   data() {
     return {
       name: "Kalacy",
+      address: "Unite state Alabama,Birmingham",
+      phone: "231-4321",
+      hasDog: true,
     };
   },
   methods: {
