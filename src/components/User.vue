@@ -32,6 +32,7 @@
 <script>
 import UserDetail from "./UserDetail.vue";
 import UserEdit from "./UserEdit.vue";
+import { dateFormat } from "../mixins/dateFormat";
 export default {
   components: {
     UserDetail,
@@ -56,14 +57,15 @@ export default {
       this.phone = user.phone;
       this.hasDog = user.hasDog;
     },
-    getDateAndTime(date) {
-      let hour = date.getHours();
-      let minutes = date.getMinutes();
-      let fullDate = `${date.getFullYear()}/${
-        date.getMonth() + 1
-      }/${date.getDate()}`;
-      return `${fullDate} ${hour}:${minutes}`;
-    },
+    // getDateAndTime(date) {
+    //   let hour = date.getHours();
+    //   let minutes = date.getMinutes();
+    //   let fullDate = `${date.getFullYear()}/${
+    //     date.getMonth() + 1
+    //   }/${date.getDate()}`;
+    //   return `${fullDate} ${hour}:${minutes}`;
+    // },
   },
+  mixins: [dateFormat],
 };
 </script>
