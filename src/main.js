@@ -9,7 +9,13 @@ import User from "@/components/User";
 Vue.config.productionTip = false;
 // Vue.component("AppStatus", StatusComponent);
 // Vue.component("User", User);
-export const eventBus = new Vue();
+export const eventBus = new Vue({
+  methods: {
+    userWasEdited(date) {
+      this.$emit("userWasEdited", date);
+    },
+  },
+});
 
 new Vue({
   router,
