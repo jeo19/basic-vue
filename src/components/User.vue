@@ -3,7 +3,8 @@
     <v-main>
       <div class="indigo lighten-3 pa-3">
         <h1>User component</h1>
-        <p>name:{{ name }}</p>
+        <p>name:VueJS</p>
+        <p>CreatedAt:{{ createdAt }}</p>
         <hr />
         <v-layout row wrap>
           <v-flex xs12 sm6
@@ -42,7 +43,11 @@ export default {
       address: "Unite state Alabama,Birmingham",
       phone: "231-4321",
       hasDog: true,
+      createdAt: null,
     };
+  },
+  created() {
+    this.createdAt = this.getDateAndTime(new Date());
   },
   methods: {
     parents(user) {
@@ -50,6 +55,14 @@ export default {
       this.address = user.address;
       this.phone = user.phone;
       this.hasDog = user.hasDog;
+    },
+    getDateAndTime(date) {
+      let hour = date.getHours();
+      let minutes = date.getMinutes();
+      let fullDate = `${date.getFullYear()}/${
+        date.getMonth() + 1
+      }/${date.getDate()}`;
+      return `${fullDate} ${hour}:${minutes}`;
     },
   },
 };
