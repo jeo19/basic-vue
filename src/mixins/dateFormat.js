@@ -1,4 +1,9 @@
 export const dateFormat = {
+  data() {
+    return {
+      mixinData: "mixins data",
+    };
+  },
   methods: {
     getDateAndTime(date) {
       if (date !== null) {

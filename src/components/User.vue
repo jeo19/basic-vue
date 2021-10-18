@@ -4,7 +4,8 @@
       <div class="indigo lighten-3 pa-3">
         <h1>User component</h1>
         <p>name:VueJS</p>
-        <p>CreatedAt:{{ createdAt }}</p>
+        <p>CreatedAt:{{ getDateAndTime(createdAt) }}</p>
+        {{ helloToMixin }}
         <hr />
         <v-layout row wrap>
           <v-flex xs12 sm6
@@ -47,8 +48,13 @@ export default {
       createdAt: null,
     };
   },
+  computed: {
+    helloToMixin() {
+      return this.mixinData + "Hello";
+    },
+  },
   created() {
-    this.createdAt = this.getDateAndTime(new Date());
+    this.createdAt = new Date();
   },
   methods: {
     parents(user) {
@@ -57,14 +63,6 @@ export default {
       this.phone = user.phone;
       this.hasDog = user.hasDog;
     },
-    // getDateAndTime(date) {
-    //   let hour = date.getHours();
-    //   let minutes = date.getMinutes();
-    //   let fullDate = `${date.getFullYear()}/${
-    //     date.getMonth() + 1
-    //   }/${date.getDate()}`;
-    //   return `${fullDate} ${hour}:${minutes}`;
-    // },
   },
   mixins: [dateFormat],
 };
