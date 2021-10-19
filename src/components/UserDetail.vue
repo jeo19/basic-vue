@@ -53,6 +53,7 @@ export default {
     eventBus.$on("userWasEdited", (date) => {
       this.editedDate = date;
     });
+    console.log("mixins");
   },
   methods: {},
   mixins: [dateFormat],

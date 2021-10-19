@@ -1,4 +1,7 @@
 export const dateFormat = {
+  created() {
+    console.log("Hello mixins");
+  },
   data() {
     return {
       mixinData: "mixins data",
